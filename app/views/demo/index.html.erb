@@ -1,0 +1,32 @@
+<div class="card">
+  <h2 class="section-title">Security Demonstration Dashboard</h2>
+  <p class="info-text">
+    This dashboard compares intentionally vulnerable error-handling routes with remediated secure routes.
+  </p>
+</div>
+
+<div class="card demo-section-bad">
+  <h3>Vulnerable Routes</h3>
+  <p class="info-text">
+    These routes intentionally expose exception messages, stack traces, and database details.
+  </p>
+
+  <div class="demo-links">
+    <%= link_to "Missing Item Leak", leak_missing_item_path(9999), class: "bad-link" %>
+    <%= link_to "Controller Error Leak", leak_controller_error_path, class: "bad-link" %>
+    <%= link_to "Database Error Leak", leak_db_error_path, class: "bad-link" %>
+  </div>
+</div>
+
+<div class="card demo-section-good">
+  <h3>Secure Routes</h3>
+  <p class="info-text">
+    These routes handle the same error conditions safely and return generic user-facing responses.
+  </p>
+
+  <div class="demo-links">
+    <%= link_to "Missing Item Secure", "/items/9999", class: "good-link" %>
+    <%= link_to "Controller Error Secure", "/secure/controller_error", class: "good-link" %>
+    <%= link_to "Database Error Secure", "/secure/db_error", class: "good-link" %>
+  </div>
+</div>

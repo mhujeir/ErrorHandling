@@ -1,0 +1,28 @@
+<section class="hero">
+  <h2>Shop the Best Tech Deals</h2>
+  <p>
+    Welcome to TechMart, a simple electronics store demo built for a secure coding project.
+    Browse products, search the catalog, and explore how the application handles errors
+    in both insecure and secure ways.
+  </p>
+
+  <div class="hero-buttons">
+    <%= link_to "Shop Now", items_path, class: "btn btn-light" %>
+    <%= link_to "Search Products", search_path, class: "btn btn-dark" %>
+  </div>
+</section>
+
+<section>
+  <h2 class="section-title">Featured Products</h2>
+
+  <div class="product-grid">
+    <% @featured_items.each do |item| %>
+      <div class="product-card">
+        <h3><%= item.name %></h3>
+        <p><%= item.description %></p>
+        <p class="price">$<%= item.price %></p>
+        <%= link_to "View Product", item_path(item) %>
+      </div>
+    <% end %>
+  </div>
+</section>

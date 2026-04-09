@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>TechMart Demo Store</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+    <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
+  </head>
+
+  <body>
+    <header class="store-header">
+      <div class="container nav-wrap">
+        <div class="brand">
+          <h1>TechMart</h1>
+          <p>Simple Electronics Store Demo</p>
+        </div>
+
+        <nav class="main-nav">
+          <%= link_to "Home", root_path %>
+          <%= link_to "Products", items_path %>
+          <%= link_to "Search", search_path %>
+        </nav>
+      </div>
+    </header>
+
+    <main class="container page-content">
+      <%= yield %>
+    </main>
+
+    <%= link_to "Demo", demo_path, class: "floating-demo-btn" %>
+  </body>
+</html>
